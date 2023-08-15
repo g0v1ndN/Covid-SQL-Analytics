@@ -1,1 +1,1 @@
-# DataInsightsSQL
+# Covid-SQL-Analytics
