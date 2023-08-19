@@ -26,3 +26,6 @@ This README includes an SVG badge from an external source, which is licensed und
 - **License:** CC-BY-4.0 License
 
 The Creative Commons Attribution (CC-BY) License is an open-source license that permits usage, modification, and distribution of the content, provided you attribute the original creator. The full text of the CC-BY License can be found in the <a href="https://github.com/ellerbrock/open-source-badges/blob/master/LICENCE">LICENSE</a> file provided by the external source.
+
+## MIT License: 
+Hello! If you're interested in using my code, I'm happy to share it with you under the <a href="https://github.com/g0v1ndN/Covid-SQL-Analytics/blob/main/LICENSE">MIT License</a>. This license is fairly permissive, which means that you can use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of my code without restriction, as long as you include the original copyright notice and disclaimer in your own code. Additionally, I provide no warranties or guarantees for my code, so you use it at your own risk. I hope this helps, and happy coding!
