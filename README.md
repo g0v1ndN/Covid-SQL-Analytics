@@ -12,7 +12,7 @@
 </div>
 
 ## About
-Embarking on my first data science project, this repository documents my progression as I explore SQL-based data analysis, with a specific focus on understanding the complexities of Covid-19 data. While I'm on a mission to learn, I'm excited to share this journey openly, creating a resource for anyone eager to learn alongside me.
+Embarking on my first data science project, this repository documents my progression as I explore SQL-based data analysis using PostgreSQL, with a specific focus on understanding the complexities of Covid-19 data. While I'm on a mission to learn, I'm excited to share this journey openly, creating a resource for anyone eager to learn alongside me.
 
 <b>Note:</b> This project is currently a work in progress and may not be fully functional or complete. It is being actively developed to add additional features and improve existing functionality.
 
