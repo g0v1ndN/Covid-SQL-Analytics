@@ -1,7 +1,7 @@
 # Covid-SQL-Analytics
 <div align="left">
    <a href="https://opensource.org/osd">
-      <img src="https://firstcontributions.github.io/open-source-badges/badges/open-source-v1/open-source.svg" alt="open-source"/>
+      <img src="https://img.shields.io/badge/Open%20Source-%2328a745" alt="open-source"/>
    </a>
    <a href="https://opensource.org/license/mit/">
       <img src="https://img.shields.io/badge/License-MIT-green" alt="mit-license"/>
@@ -18,21 +18,12 @@ Embarking on my first data science project, I am referring to Alex The Analyst's
 
 ## External Resources:
 
-### Badges
-This README includes an SVG badge from an external source, which is licensed under the Creative Commons Attribution (CC-BY) License.
-
-- **Badge Name:** Open Source v1 
-- **Author:** Maik Ellerbrock
-- **License:** CC-BY-4.0 License
-
-The Creative Commons Attribution (CC-BY) License is an open-source license that permits usage, modification, and distribution of the content, provided you attribute the original creator. The full text of the CC-BY License can be found in the <a href="https://github.com/ellerbrock/open-source-badges/blob/master/LICENCE">LICENSE</a> file provided by the external source.
-
 ### Data Inclusion
 - **Data Source:** Our World in Data
 - **Citation:** Edouard Mathieu, Hannah Ritchie, Lucas Rodés-Guirao, Cameron Appel, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Saloni Dattani, Diana Beltekian, Esteban Ortiz-Ospina, and Max Roser (2020) - "Coronavirus Pandemic (COVID-19)". Published online at <a href="https://ourworldindata.org">OurWorldInData.org</a>.
 - **License:** CC-BY-4.0 License
 
-The website grants permission to use, distribute, and reproduce these materials in any medium, provided the source and authors are credited.
+The Creative Commons Attribution (CC-BY) License is an open-source license that permits usage, modification, and distribution of the content, provided you attribute the original creator.
 
 ## MIT License: 
 Hello! If you're interested in using my code, I'm happy to share it with you under the <a href="https://github.com/g0v1ndN/Covid-SQL-Analytics/blob/main/LICENSE">MIT License</a>. This license is fairly permissive, which means that you can use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of my code without restriction, as long as you include the original copyright notice and disclaimer in your own code. Additionally, I provide no warranties or guarantees for my code, so you use it at your own risk. I hope this helps, and happy coding!
