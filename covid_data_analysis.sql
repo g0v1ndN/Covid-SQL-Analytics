@@ -24,3 +24,6 @@ CREATE TABLE IF NOT EXISTS public.covid_deaths
 
 -- Import COVID-19 deaths data from a CSV file into the "CovidDeaths" table.
 COPY public.covid_deaths FROM 'C:\Users\hp\Documents\CovidData\CovidDeaths.csv' DELIMITER ',' CSV HEADER;
+
+-- Query to retrieve the total number of data entries in the "covid_deaths" table.
+SELECT COUNT(*) FROM public.covid_deaths;
