@@ -1,7 +1,7 @@
----- SQL script for database setup, data analysis, and visualization of COVID-19 data.
+-- SQL script for database setup, data analysis, and visualization of COVID-19 data.
 
 -- Create a table to store COVID-19 deaths data.
-CREATE TABLE IF NOT EXISTS public."CovidDeaths"
+CREATE TABLE IF NOT EXISTS public.covid_deaths
 (
     iso_code character varying(10),
     continent character varying(50),
@@ -21,3 +21,6 @@ CREATE TABLE IF NOT EXISTS public."CovidDeaths"
     new_deaths_per_million numeric,
     new_deaths_smoothed_per_million numeric
 );
+
+-- Import COVID-19 deaths data from a CSV file into the "CovidDeaths" table.
+COPY public.covid_deaths FROM 'C:\Users\hp\Documents\CovidData\CovidDeaths.csv' DELIMITER ',' CSV HEADER;
