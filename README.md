@@ -9,7 +9,10 @@
   <a href="https://developer.mozilla.org/en-US/docs/Glossary/SQL">
     <img src="https://img.shields.io/badge/SQL-%23007ACC" alt="SQL"/>
   </a>
-</div>
+   <a href="http://makeapullrequest.com">
+      <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs Welcome"/>
+   </a>
+   </div>
 
 ## About
 Embarking on my first data science project, this repository documents my progression as I explore SQL-based data analysis using PostgreSQL, with a specific focus on understanding the complexities of Covid-19 data. While I'm on a mission to learn, I'm excited to share this journey openly, creating a resource for anyone eager to learn alongside me.
