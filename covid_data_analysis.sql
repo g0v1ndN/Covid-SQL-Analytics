@@ -48,7 +48,7 @@ SELECT
     (SELECT MIN(date) FROM public.covid_vaccinations) AS covid_vaccinations_start_date,
     (SELECT MAX(date) FROM public.covid_vaccinations) AS covid_vaccinations_end_date;
 
--- Retrieves Covid-related data for India from the Covid Deaths table.
+-- Retrieve Covid-related data for India from the Covid Deaths table.
 SELECT
     location,
     date,
