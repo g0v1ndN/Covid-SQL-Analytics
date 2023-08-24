@@ -18,7 +18,7 @@ Embarking on my first data science project, this repository documents my progres
 
 ## Observations & Findings
 
-<b>Note:</b> The data used in this project covers the period from January 1, 2020, to August 17, 2023. Please note that the source website's data might have been updated since the start of this project.
+<b>Note:</b> The data used in this project covers the period from January 1, 2020, to August 16, 2023. Please note that the source website's data might have been updated since the start of this project.
 
 ## External Resources:
 
