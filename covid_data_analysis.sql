@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS public.covid_deaths
     new_deaths_smoothed_per_million numeric
 );
 
--- Import COVID-19 deaths data from a CSV file into the "CovidDeaths" table.
+-- Import COVID-19 deaths data from a CSV file into the "covid_deaths" table.
 COPY public.covid_deaths FROM 'C:\Users\Govind\Documents\CovidData\CovidDeaths.csv' DELIMITER ',' CSV HEADER;
 
 -- Create a table to store COVID-19 vaccination data.
@@ -47,3 +47,18 @@ SELECT
     (SELECT MAX(date) FROM public.covid_deaths) AS covid_deaths_end_date,
     (SELECT MIN(date) FROM public.covid_vaccinations) AS covid_vaccinations_start_date,
     (SELECT MAX(date) FROM public.covid_vaccinations) AS covid_vaccinations_end_date;
+
+-- Retrieves Covid-related data for India from the Covid Deaths table.
+SELECT
+    location,
+    date,
+    total_cases,
+    total_deaths,
+    (total_deaths::numeric / total_cases) * 100 AS death_percentage
+FROM
+    public.covid_deaths
+WHERE
+    location ILIKE '%India%'
+    AND continent IS NOT NULL
+ORDER BY
+    1, 2;
