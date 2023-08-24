@@ -23,7 +23,20 @@ CREATE TABLE IF NOT EXISTS public.covid_deaths
 );
 
 -- Import COVID-19 deaths data from a CSV file into the "CovidDeaths" table.
-COPY public.covid_deaths FROM 'C:\Users\hp\Documents\CovidData\CovidDeaths.csv' DELIMITER ',' CSV HEADER;
+COPY public.covid_deaths FROM 'C:\Users\Govind\Documents\CovidData\CovidDeaths.csv' DELIMITER ',' CSV HEADER;
 
--- Query to retrieve the total number of data entries in the "covid_deaths" table.
-SELECT COUNT(*) FROM public.covid_deaths;
+-- Create a table to store COVID-19 vaccination data.
+CREATE TABLE IF NOT EXISTS public.covid_vaccinations (
+    iso_code VARCHAR(10),
+    continent VARCHAR(50),
+    location VARCHAR(100),
+    date DATE,
+    total_vaccinations BIGINT,
+    people_vaccinated BIGINT,
+    people_fully_vaccinated BIGINT,
+    new_vaccinations BIGINT,
+    new_vaccinations_smoothed BIGINT
+);
+
+-- Import COVID-19 vaccination data from a CSV file into the "covid_vaccinations" table.
+COPY public.covid_vaccinations FROM 'C:\Users\Govind\Documents\CovidData\CovidVaccinations.csv' DELIMITER ',' CSV HEADER;
