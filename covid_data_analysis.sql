@@ -40,3 +40,10 @@ CREATE TABLE IF NOT EXISTS public.covid_vaccinations (
 
 -- Import COVID-19 vaccination data from a CSV file into the "covid_vaccinations" table.
 COPY public.covid_vaccinations FROM 'C:\Users\Govind\Documents\CovidData\CovidVaccinations.csv' DELIMITER ',' CSV HEADER;
+
+-- Retrieve and compare the starting and ending dates of COVID-19 data from both tables to ensure data consistency.
+SELECT
+    (SELECT MIN(date) FROM public.covid_deaths) AS covid_deaths_start_date,
+    (SELECT MAX(date) FROM public.covid_deaths) AS covid_deaths_end_date,
+    (SELECT MIN(date) FROM public.covid_vaccinations) AS covid_vaccinations_start_date,
+    (SELECT MAX(date) FROM public.covid_vaccinations) AS covid_vaccinations_end_date;
