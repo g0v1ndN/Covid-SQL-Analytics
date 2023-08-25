@@ -65,11 +65,11 @@ ORDER BY
 
 -- Calculate the percentage of population infected with COVID-19 in India.
 SELECT
-    Location,
-    Date,
-    Population,
-    Total_Cases,
-    ROUND((Total_Cases::numeric / Population) * 100, 2) AS percent_population_infected
+    location,
+    date,
+    population,
+    total_cases,
+    ROUND((total_cases::numeric / population) * 100, 2) AS percent_population_infected
 FROM
     public.covid_deaths
 WHERE
