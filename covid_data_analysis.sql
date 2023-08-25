@@ -73,7 +73,7 @@ SELECT
 FROM
     public.covid_deaths
 WHERE
-    Location ILIKE '%India%'
-	AND date = '2023-08-16'
+    location ILIKE '%India%'
+    AND date = '2023-08-16'
 ORDER BY
-    Location, Date;
+    1, 2;
