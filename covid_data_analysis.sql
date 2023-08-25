@@ -60,6 +60,20 @@ FROM
 WHERE
     location ILIKE '%India%'
     AND date = '2023-08-16'
-    AND continent IS NOT NULL
 ORDER BY
     1, 2;
+
+-- Calculate the percentage of population infected with COVID-19 in India.
+SELECT
+    Location,
+    Date,
+    Population,
+    Total_Cases,
+    ROUND((Total_Cases::numeric / Population) * 100, 2) AS Percent_Population_Infected
+FROM
+    public.covid_deaths
+WHERE
+    Location ILIKE '%India%'
+	AND date = '2023-08-16'
+ORDER BY
+    Location, Date;
