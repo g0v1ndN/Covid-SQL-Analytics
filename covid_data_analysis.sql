@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS public.covid_deaths
     continent character varying(50),
     location character varying(100),
     date date,
-    population_density numeric,
+    population bigint,
     total_cases bigint,
     new_cases bigint,
     new_cases_smoothed numeric,
