@@ -77,3 +77,17 @@ WHERE
     AND date = '2023-08-16'
 ORDER BY
     1, 2;
+
+-- Calculate the percentage of the population that is globally infected by COVID-19.
+SELECT
+    location,
+    population,
+    ROUND((MAX(total_cases)::numeric / population) * 100, 2) AS percent_population_infected 
+FROM
+    public.covid_deaths
+WHERE
+    date = '2023-08-16'
+GROUP BY
+    location, population
+ORDER BY
+    percent_population_infected DESC NULLS LAST;
