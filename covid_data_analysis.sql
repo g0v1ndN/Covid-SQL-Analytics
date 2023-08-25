@@ -69,7 +69,7 @@ SELECT
     Date,
     Population,
     Total_Cases,
-    ROUND((Total_Cases::numeric / Population) * 100, 2) AS Percent_Population_Infected
+    ROUND((Total_Cases::numeric / Population) * 100, 2) AS percent_population_infected
 FROM
     public.covid_deaths
 WHERE
