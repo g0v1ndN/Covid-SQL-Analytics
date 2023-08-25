@@ -20,7 +20,7 @@ Embarking on my first data science project, this repository documents my progres
 <b>Note:</b> This project is currently a work in progress and may not be fully functional or complete. It is being actively developed to add additional features and improve existing functionality.
 
 ## Observations & Findings
-- On August 16, 2023, the COVID-19 death rate in India was 1.18%, reflecting a relatively low fatality rate for confirmed cases.
+- As of the latest data, the COVID-19 death rate in India is 1.18%, reflecting a relatively low fatality rate for confirmed cases.
 
 <b>Note:</b> The data used in this project covers the period from January 1, 2020, to August 16, 2023. Please note that the source website's data might have been updated since the start of this project.
 
