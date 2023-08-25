@@ -21,7 +21,7 @@ Embarking on my first data science project, this repository documents my progres
 - As of the latest data, the COVID-19 death rate in India is <b>1.18%</b>, reflecting a relatively <b>low fatality rate</b> for confirmed cases.
 - The infection percentage in India, calculated as <b>3.18%</b> indicates a relatively <b>moderate spread</b> of COVID-19 within the population.
 - The top 5 locations with the highest infection percentages are <b>Cyprus (73.76%)</b>, <b>San Marino (72.37%)</b>, <b>Brunei (69.09%)</b>, <b>Austria (68.03%)</b>, and <b>South Korea (65.42%).</b>
-- In contrast, <b>North Korea and Turkmenistan have zero cases</b>, while <b>Yemen, Niger, and Chad share the lowest infection rate of 0.04%.</b>
+- In contrast, North Korea and Turkmenistan have <b>zero cases</b>, while Yemen, Niger, and Chad share the lowest infection rate of <b>0.04%</b>.
 
 <b>Note:</b> The data used in this project covers the period from January 1, 2020, to August 16, 2023. Please note that the source website's data might have been updated since the start of this project.
 
