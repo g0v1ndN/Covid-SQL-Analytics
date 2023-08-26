@@ -25,6 +25,7 @@ Embarking on my first data science project, this repository documents my progres
 - Peru, Bulgaria, Bosnia and Herzegovina, Hungary, and North Macedonia exhibit higher death percentages, with rates ranging from <b>0.47% to 0.65%</b>.
 - The <b>countries</b> with the highest COVID-19 <b>death toll</b> are as follows: United States (1,127,152 deaths), Brazil (704,659 deaths), India (531,922 deaths), Russia (399,938 deaths), and Mexico (334,336 deaths).
 - North America leads with the <b>highest death count</b> (1,127,152), followed by South America (704,659), Asia (531,922), Europe (399,938), Africa (102,595) and Oceania (22,618) on a <b>continental basis</b>.
+- The latest data reveals a COVID-19 mortality rate of <b>0.90%</b>, reflecting a relatively low fatality rate among confirmed cases.
 
 <b>Note:</b> The data used in this project covers the period from January 1, 2020, to August 16, 2023. Please note that the source website's data might have been updated since the start of this project.
 
