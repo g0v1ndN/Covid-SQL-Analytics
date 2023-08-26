@@ -120,7 +120,7 @@ ORDER BY
 SELECT
     SUM(new_cases) AS total_cases,
     SUM(new_deaths) AS total_deaths,
-	ROUND(SUM(new_deaths::numeric) / SUM(new_cases) * 100, 2) AS mortality_rate
+    ROUND(SUM(new_deaths::numeric) / SUM(new_cases) * 100, 2) AS mortality_rate
 FROM
     public.covid_deaths
 WHERE
