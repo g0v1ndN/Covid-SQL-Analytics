@@ -20,8 +20,9 @@ Embarking on my first data science project, this repository documents my progres
 ## Observations & Findings
 - As of the latest data, the COVID-19 death rate in India is <b>1.18%</b>, reflecting a relatively <b>low fatality rate</b> for confirmed cases.
 - The infection percentage in India, calculated as <b>3.18%</b> indicates a relatively <b>moderate spread</b> of COVID-19 within the population.
-- <b>Cyprus (73.76%)</b>, <b>San Marino (72.37%)</b>, <b>Brunei (69.09%)</b>, <b>Austria (68.03%)</b>, and <b>South Korea (65.42%)</b> are the top 5 hotspots with the highest infection percentages
+- Cyprus (73.76%), San Marino (72.37%), Brunei (69.09%), Austria (68.03%), and South Korea (65.42%) are the <b>top 5 hotspots</b> with the highest infection percentages
 - In contrast, North Korea and Turkmenistan have <b>zero cases</b>, while Yemen, Niger, and Chad share the lowest infection rate of <b>0.04%</b>.
+- Peru, Bulgaria, Bosnia and Herzegovina, Hungary, and North Macedonia exhibit higher death percentages, with rates ranging from <b>0.47% to 0.65%</b>.
 
 <b>Note:</b> The data used in this project covers the period from January 1, 2020, to August 16, 2023. Please note that the source website's data might have been updated since the start of this project.
 
