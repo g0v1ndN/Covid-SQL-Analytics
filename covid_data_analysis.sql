@@ -100,3 +100,16 @@ GROUP BY
     location
 ORDER BY
     max_total_deaths DESC;
+
+-- Retrieve the maximum recorded COVID-19 death count for each continent.
+SELECT
+    continent,
+    MAX(total_deaths::numeric) AS total_death_count
+FROM
+    public.covid_deaths
+WHERE
+    continent IS NOT NULL
+GROUP BY
+    continent
+ORDER BY
+    total_death_count DESC;
