@@ -48,13 +48,13 @@ SELECT
     (SELECT MIN(date) FROM public.covid_vaccinations) AS covid_vaccinations_start_date,
     (SELECT MAX(date) FROM public.covid_vaccinations) AS covid_vaccinations_end_date;
 
--- Calculates and format the death percentage for Covid-related data in India.
+-- Calculate and format the percentage of population infected with COVID-19 in India.
 SELECT
     location,
     date,
+    population,
     total_cases,
-    total_deaths,
-    ROUND((total_deaths::numeric / total_cases) * 100, 2) AS death_percentage
+    ROUND((total_cases::numeric / population) * 100, 2) AS percent_population_infected
 FROM
     public.covid_deaths
 WHERE
@@ -63,13 +63,13 @@ WHERE
 ORDER BY
     1, 2;
 
--- Calculate the percentage of population infected with COVID-19 in India.
+-- Calculates and format the death percentage for Covid-related data in India.
 SELECT
     location,
     date,
-    population,
     total_cases,
-    ROUND((total_cases::numeric / population) * 100, 2) AS percent_population_infected
+    total_deaths,
+    ROUND((total_deaths::numeric / total_cases) * 100, 2) AS death_percentage
 FROM
     public.covid_deaths
 WHERE
@@ -126,6 +126,31 @@ GROUP BY
 ORDER BY
     percent_population_infected DESC NULLS LAST;
 
+-- Calculate the mortality rate of COVID-19 as of today.
+SELECT
+    SUM(new_cases) AS total_cases,
+    SUM(new_deaths) AS total_deaths,
+    ROUND(SUM(new_deaths::numeric) / SUM(new_cases) * 100, 2) AS mortality_rate
+FROM
+    public.covid_deaths
+WHERE
+    continent IS NOT NULL
+    AND date <= '2023-08-16'
+ORDER BY
+    total_cases, total_deaths;
+
+-- Calculate the death percentage of the population based on COVID-19 data.
+SELECT
+    location,
+    population,
+    ROUND((MAX(total_deaths)::numeric / population) * 100, 2) AS death_percentage 
+FROM
+    public.covid_deaths
+GROUP BY
+    location, population
+ORDER BY
+    death_percentage DESC NULLS LAST;
+
 -- Retrieve the maximum recorded COVID-19 death count for each continent.
 SELECT
     continent,
@@ -139,7 +164,7 @@ GROUP BY
 ORDER BY
     total_death_count DESC;
 
--- Examine locations based on their highest recorded COVID-19 death counts.
+-- Examine countries based on their highest recorded COVID-19 death counts.
 SELECT
     location,
     COALESCE(MAX(total_deaths), 0) AS max_total_deaths
@@ -151,19 +176,6 @@ GROUP BY
     location
 ORDER BY
     max_total_deaths DESC;
-
--- Calculate the mortality rate of COVID-19 as of today.
-SELECT
-    SUM(new_cases) AS total_cases,
-    SUM(new_deaths) AS total_deaths,
-    ROUND(SUM(new_deaths::numeric) / SUM(new_cases) * 100, 2) AS mortality_rate
-FROM
-    public.covid_deaths
-WHERE
-    continent IS NOT NULL
-    AND date <= '2023-08-16'
-ORDER BY
-    total_cases, total_deaths;
 
 -- Retrieve data of people vaccinated from different income strata on August 16, 2023.
 SELECT
