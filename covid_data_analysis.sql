@@ -78,6 +78,25 @@ WHERE
 ORDER BY
     1, 2;
 
+-- Calculate the vaccination percentage for India.
+SELECT
+    v.location AS country,                  
+    v.date,                                 
+    d.population,                           
+    v.people_vaccinated,                    
+    ROUND((v.people_vaccinated::numeric / d.population) * 100, 2) AS vaccination_percentage                                           
+FROM
+    public.covid_vaccinations v             
+JOIN
+    public.covid_deaths d                   
+    ON v.location = d.location              
+    AND v.date = d.date
+WHERE
+    v.location ILIKE '%India%'              
+    AND v.date = '2023-08-16'               
+ORDER BY
+    1, 2;                                   
+
 -- Calculate the percentage of the population that is globally infected by COVID-19.
 SELECT
     location,
