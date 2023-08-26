@@ -96,6 +96,8 @@ SELECT
     COALESCE(MAX(total_deaths), 0) AS max_total_deaths
 FROM
     public.covid_deaths
+WHERE
+	continent is not null
 GROUP BY
     location
 ORDER BY
