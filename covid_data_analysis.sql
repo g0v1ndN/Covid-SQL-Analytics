@@ -189,7 +189,7 @@ SELECT
     MAX(v.date) AS max_date_used,
     d.population,
     v.people_vaccinated,
-    ROUND((v.people_vaccinated::numeric / d.population) * 100, 2) AS fully_vaccination_percentage
+    ROUND((v.people_vaccinated::numeric / d.population) * 100, 2) AS vaccination_percentage
 FROM
     public.covid_vaccinations v
 JOIN
