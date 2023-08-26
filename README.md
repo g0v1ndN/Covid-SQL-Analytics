@@ -23,7 +23,7 @@ Embarking on my first data science project, this repository documents my progres
 - Cyprus (73.76%), San Marino (72.37%), Brunei (69.09%), Austria (68.03%), and South Korea (65.42%) are the <b>top 5 hotspots</b> with the highest infection percentages
 - In contrast, North Korea and Turkmenistan have <b>zero cases</b>, while Yemen, Niger, and Chad share the lowest infection rate of <b>0.04%</b>.
 - Peru, Bulgaria, Bosnia and Herzegovina, Hungary, and North Macedonia exhibit higher death percentages, with rates ranging from <b>0.47% to 0.65%</b>.
-- Europe leads with the <b>highest death count</b> (6,955,128), followed by Asia (1,632,822), North America (1,602,820), South America (1,356,082), and Africa (259,004) on a continental basis.
+- North America leads with the <b>highest death count</b> (1,127,152), followed by South America (704,659), Asia (531,922), Europe (399,938), Africa (102,595) and Oceania (22,618) on a continental basis.
 
 <b>Note:</b> The data used in this project covers the period from January 1, 2020, to August 16, 2023. Please note that the source website's data might have been updated since the start of this project.
 
