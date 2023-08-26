@@ -115,3 +115,16 @@ GROUP BY
     continent
 ORDER BY
     total_death_count DESC;
+
+-- Calculate the mortality rate of COVID-19 as of today.
+SELECT
+    SUM(new_cases) AS total_cases,
+    SUM(new_deaths) AS total_deaths,
+	ROUND(SUM(new_deaths::numeric) / SUM(new_cases) * 100, 2) AS mortality_rate
+FROM
+    public.covid_deaths
+WHERE
+    continent IS NOT NULL
+    AND date <= '2023-08-16'
+ORDER BY
+    total_cases, total_deaths;
