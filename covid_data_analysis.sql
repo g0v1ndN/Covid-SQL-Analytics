@@ -97,7 +97,7 @@ SELECT
 FROM
     public.covid_deaths
 WHERE
-	continent is not null
+    continent IS NOT NULL
 GROUP BY
     location
 ORDER BY
