@@ -126,19 +126,6 @@ GROUP BY
 ORDER BY
     percent_population_infected DESC NULLS LAST;
 
--- Examine locations based on their highest recorded COVID-19 death counts.
-SELECT
-    location,
-    COALESCE(MAX(total_deaths), 0) AS max_total_deaths
-FROM
-    public.covid_deaths
-WHERE
-    continent IS NOT NULL
-GROUP BY
-    location
-ORDER BY
-    max_total_deaths DESC;
-
 -- Retrieve the maximum recorded COVID-19 death count for each continent.
 SELECT
     continent,
@@ -151,6 +138,19 @@ GROUP BY
     continent
 ORDER BY
     total_death_count DESC;
+
+-- Examine locations based on their highest recorded COVID-19 death counts.
+SELECT
+    location,
+    COALESCE(MAX(total_deaths), 0) AS max_total_deaths
+FROM
+    public.covid_deaths
+WHERE
+    continent IS NOT NULL
+GROUP BY
+    location
+ORDER BY
+    max_total_deaths DESC;
 
 -- Calculate the mortality rate of COVID-19 as of today.
 SELECT
