@@ -89,3 +89,14 @@ GROUP BY
     location, population
 ORDER BY
     percent_population_infected DESC NULLS LAST;
+
+-- Examine locations based on their highest recorded COVID-19 death counts.
+SELECT
+    location,
+    COALESCE(MAX(total_deaths), 0) AS max_total_deaths
+FROM
+    public.covid_deaths
+GROUP BY
+    location
+ORDER BY
+    max_total_deaths DESC;
