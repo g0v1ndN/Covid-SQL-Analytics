@@ -48,7 +48,7 @@ SELECT
     (SELECT MIN(date) FROM public.covid_vaccinations) AS covid_vaccinations_start_date,
     (SELECT MAX(date) FROM public.covid_vaccinations) AS covid_vaccinations_end_date;
 
--- Calculates and format the death percentage for Covid-related data in India on August 16, 2023.
+-- Calculates and format the death percentage for Covid-related data in India.
 SELECT
     location,
     date,
@@ -96,6 +96,23 @@ WHERE
     AND v.date = '2023-08-16'               
 ORDER BY
     1, 2;                                   
+
+-- Retrieve the complete vaccination percentage for India.
+SELECT
+    v.location AS country,
+    v.date,
+    d.population,
+    v.people_fully_vaccinated,
+ROUND((v.people_fully_vaccinated::numeric / d.population) * 100, 2) AS fully_vaccination_percentage
+FROM
+    public.covid_vaccinations v
+JOIN
+    public.covid_deaths d ON v.location = d.location AND v.date = d.date
+WHERE
+    v.location ILIKE '%India%'
+    AND v.date = '2023-08-16'
+ORDER BY
+    1, 2;
 
 -- Calculate the percentage of the population that is globally infected by COVID-19.
 SELECT
