@@ -21,7 +21,7 @@ Embarking on my first data science project, this repository documents my progres
 - As of the latest data, the COVID-19 death rate in India is <b>1.18%</b>, reflecting a relatively <b>low fatality rate</b> for confirmed cases.
 - The infection percentage in India, calculated as <b>3.18%</b> indicates a relatively <b>moderate spread</b> of COVID-19 within the population.
 - <b>72.50%</b> of the population in India has received at least one dose of the Covid-19 vaccine, and <b>67.17%</b> are fully vaccinated.
-- Cyprus (73.76%), San Marino (72.37%), Brunei (69.09%), Austria (68.03%), and South Korea (65.42%) are the <b>top 5 hotspots</b> with the highest infection percentages
+- Cyprus (73.76%), San Marino (72.37%), Brunei (69.09%), Austria (68.03%), and South Korea (65.42%) are the <b>top 5 hotspots</b> with the highest infection percentages.
 - In contrast, North Korea and Turkmenistan have <b>zero cases</b>, while Yemen, Niger, and Chad share the lowest infection rate of <b>0.04%</b>.
 - Peru, Bulgaria, Bosnia and Herzegovina, Hungary, and North Macedonia exhibit higher death percentages, with rates ranging from <b>0.47% to 0.65%</b>.
 - North America leads with the <b>highest death count</b> (1,127,152), followed by South America (704,659), Asia (531,922), Europe (399,938), Africa (102,595) and Oceania (22,618) on a <b>continental basis</b>.
