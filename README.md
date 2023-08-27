@@ -27,6 +27,7 @@ Embarking on my first data science project, this repository documents my progres
 - India has reported a significant number of COVID-19 deaths, totaling <b>531,922</b>, reflecting the pandemic's substantial impact on the country.
 
 ### Global COVID-19 Landscape
+- The COVID-19 outbreak, which first started in <b>China</b>, was officially reported on <b>January 4, 2020</b>.
 - As of the current data, the <b>top 5 hotspots</b> with the highest infection percentages are Cyprus (73.76%), San Marino (72.37%), Brunei (69.09%), Austria (68.03%), and South Korea (65.42%).
 - In contrast, North Korea and Turkmenistan have <b>zero cases</b>, while Yemen, Niger, and Chad share the lowest infection rate of <b>0.04%</b>.
 - The latest data reveals a COVID-19 mortality rate of <b>0.90%</b>, reflecting a relatively low fatality rate among confirmed cases.
