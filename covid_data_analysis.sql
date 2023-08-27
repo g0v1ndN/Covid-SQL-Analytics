@@ -204,22 +204,23 @@ GROUP BY
 ORDER BY
     max_total_deaths DESC;
 
--- Retrieve data of people vaccinated from different income strata on August 16, 2023.
-SELECT
+-- Retrieve data of people vaccinated from different income strata.
+SELECT DISTINCT ON (v.location)
     v.location AS category,
-    v.date,
+    MAX(v.date) AS max_vaccination_date,
     d.population,
     v.people_vaccinated,
-    ROUND((v.people_vaccinated::numeric / d.population) * 100, 2) AS vaccination_percentage
+    ROUND(v.people_vaccinated::numeric / d.population * 100, 2) AS vaccination_percentage
 FROM
     public.covid_vaccinations v
 JOIN
     public.covid_deaths d ON v.location = d.location AND v.date = d.date
 WHERE
     v.location ILIKE '%income%'
-    AND v.date = '2023-08-16'
+GROUP BY
+    v.location, d.population, v.people_vaccinated
 ORDER BY
-    1, 2;
+    v.location, max_vaccination_date DESC;
 
 -- This query retrieves data for the "Low income" strata with its maximum date used.
 -- Addresses missing data for the "Low income" category in the last query.
@@ -238,4 +239,4 @@ WHERE
 GROUP BY
     v.location, d.population, v.people_vaccinated
 ORDER BY
-    max_date_used DESC NULLS LAST;
+    max_date_used DESC;
