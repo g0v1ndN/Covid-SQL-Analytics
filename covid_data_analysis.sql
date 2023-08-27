@@ -126,6 +126,21 @@ WHERE
 ORDER BY
     1, 2;
 
+-- Find the location and date of the first reported COVID-19 case globally.
+SELECT
+    location,
+    MIN(date) AS first_reported_date
+FROM
+    public.covid_deaths
+WHERE
+    continent IS NOT NULL
+    AND total_cases > 0
+GROUP BY
+    location
+ORDER BY
+    first_reported_date
+LIMIT 1;
+
 -- Calculate the percentage of the population that is globally infected by COVID-19.
 SELECT
     location,
