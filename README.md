@@ -20,16 +20,17 @@ Embarking on my first data science project, this repository documents my progres
 ## Observations & Findings
 
 ### Understanding the COVID-19 Situation in India
+- COVID-19 was first reported in India on <b>January 30, 2020</b>.
 - As of the latest data, the infection percentage in India is <b>3.18%</b>, indicating a relatively <b>moderate spread</b> of COVID-19 within the population.
-- The death rate in India, calculated as <b>1.18%</b>, reflects a relatively <b>low fatality rate</b> for confirmed cases.
+- Currently, the death rate in India stands at <b>1.18%</b>, indicating a comparatively low fatality rate among confirmed cases.
 - <b>72.50%</b> of the population in India has received at least one dose of the Covid-19 vaccine, and <b>67.17%</b> are fully vaccinated.
 - India has reported a significant number of COVID-19 deaths, totaling <b>531,922</b>, reflecting the pandemic's substantial impact on the country.
 
 ### Global COVID-19 Landscape
-- Cyprus (73.76%), San Marino (72.37%), Brunei (69.09%), Austria (68.03%), and South Korea (65.42%) are the <b>top 5 hotspots</b> with the highest infection percentages.
+- As of the current data, the <b>top 5 hotspots</b> with the highest infection percentages are Cyprus (73.76%), San Marino (72.37%), Brunei (69.09%), Austria (68.03%), and South Korea (65.42%).
 - In contrast, North Korea and Turkmenistan have <b>zero cases</b>, while Yemen, Niger, and Chad share the lowest infection rate of <b>0.04%</b>.
 - The latest data reveals a COVID-19 mortality rate of <b>0.90%</b>, reflecting a relatively low fatality rate among confirmed cases.
-- Peru, Bulgaria, Bosnia and Herzegovina, Hungary, and North Macedonia exhibit higher death percentages, with rates ranging from <b>0.47% to 0.65%</b>.
+- Peru, Bulgaria, Bosnia and Herzegovina, Hungary, and North Macedonia are exhibiting higher death percentages, with rates ranging from <b>0.47% to 0.65%</b>.
 - North America leads with the highest death count (1,127,152), followed by South America (704,659), Asia (531,922), Europe (399,938), Africa (102,595) and Oceania (22,618) on a <b>continental basis</b>.
 - The <b>countries</b> with the highest COVID-19 death toll are as follows: United States (1,127,152 deaths), Brazil (704,659 deaths), India (531,922 deaths), Russia (399,938 deaths), and Mexico (334,336 deaths).
 - Vaccination rates vary across <b>income categories</b>, with 32.54% of low-income, 79.86% of high-income, 66.28% of lower-middle-income, and 83.42% of upper-middle-income individuals having been vaccinated at least once.
