@@ -153,6 +153,19 @@ GROUP BY
 ORDER BY
     percent_population_infected DESC NULLS LAST;
 
+-- Calculate the infection rate of COVID-19 as of today.
+SELECT
+    SUM(new_cases) AS total_cases,
+    population,
+    ROUND(SUM(new_cases::numeric) / population * 100, 2) AS infection_rate
+FROM
+    public.covid_deaths
+WHERE
+    location = 'World'
+    AND date <= '2023-08-16'
+GROUP BY
+    population;
+
 -- Calculate the mortality rate of COVID-19 as of today.
 SELECT
     SUM(new_cases) AS total_cases,
