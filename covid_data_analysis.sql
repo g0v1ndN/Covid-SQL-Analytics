@@ -1,5 +1,8 @@
 -- SQL script for database setup, data analysis, and visualization of COVID-19 data.
 
+
+-- Initial Setup Queries:
+
 -- Create a table to store COVID-19 deaths data.
 CREATE TABLE IF NOT EXISTS public.covid_deaths
 (
@@ -41,6 +44,16 @@ CREATE TABLE IF NOT EXISTS public.covid_vaccinations (
 -- Import COVID-19 vaccination data from a CSV file into the "covid_vaccinations" table.
 COPY public.covid_vaccinations FROM 'C:\Users\Govind\Documents\CovidData\CovidVaccinations.csv' DELIMITER ',' CSV HEADER;
 
+-- Retrieve and compare the starting and ending dates of COVID-19 data from both tables to ensure data consistency.
+SELECT
+    (SELECT MIN(date) FROM public.covid_deaths) AS covid_deaths_start_date,
+    (SELECT MAX(date) FROM public.covid_deaths) AS covid_deaths_end_date,
+    (SELECT MIN(date) FROM public.covid_vaccinations) AS covid_vaccinations_start_date,
+    (SELECT MAX(date) FROM public.covid_vaccinations) AS covid_vaccinations_end_date;
+
+
+-- Data Analysis Queries for India:
+
 -- Calculate the date when Covid was first reported in India.
 SELECT
     location,
@@ -52,13 +65,6 @@ WHERE
     AND total_cases > 0
 GROUP BY
     location;
-
--- Retrieve and compare the starting and ending dates of COVID-19 data from both tables to ensure data consistency.
-SELECT
-    (SELECT MIN(date) FROM public.covid_deaths) AS covid_deaths_start_date,
-    (SELECT MAX(date) FROM public.covid_deaths) AS covid_deaths_end_date,
-    (SELECT MIN(date) FROM public.covid_vaccinations) AS covid_vaccinations_start_date,
-    (SELECT MAX(date) FROM public.covid_vaccinations) AS covid_vaccinations_end_date;
 
 -- Calculate and format the percentage of population infected with COVID-19 in India.
 SELECT
@@ -75,7 +81,7 @@ WHERE
 ORDER BY
     1, 2;
 
--- Calculates and format the death percentage for Covid-related data in India.
+-- Calculates and format the mortality rate for Covid-related data in India.
 SELECT
     location,
     date,
@@ -126,6 +132,19 @@ WHERE
 ORDER BY
     1, 2;
 
+-- Calculate total deaths and death percentage for India.
+SELECT
+    SUM(new_deaths) AS total_deaths,
+    ROUND(SUM(new_deaths)::numeric / (SELECT population FROM public.covid_deaths WHERE location = 'India' LIMIT 1) * 100, 2) AS death_percentage
+FROM
+    public.covid_deaths
+WHERE
+    location = 'India'
+    AND new_cases > 0;
+
+
+-- Global COVID-19 Data Analysis Queries:
+
 -- Find the location and date of the first reported COVID-19 case globally.
 SELECT
     location,
@@ -140,18 +159,6 @@ GROUP BY
 ORDER BY
     first_reported_date
 LIMIT 1;
-
--- Calculate the percentage of the population that is globally infected by COVID-19.
-SELECT
-    location,
-    population,
-    ROUND((MAX(total_cases)::numeric / population) * 100, 2) AS percent_population_infected 
-FROM
-    public.covid_deaths
-GROUP BY
-    location, population
-ORDER BY
-    percent_population_infected DESC NULLS LAST;
 
 -- Calculate the infection rate of COVID-19 as of today.
 SELECT
@@ -179,6 +186,18 @@ WHERE
 ORDER BY
     total_cases, total_deaths;
 
+-- Calculate the percentage of the population that is globally infected by COVID-19.
+SELECT
+    location,
+    population,
+    ROUND((MAX(total_cases)::numeric / population) * 100, 2) AS percent_population_infected 
+FROM
+    public.covid_deaths
+GROUP BY
+    location, population
+ORDER BY
+    percent_population_infected DESC NULLS LAST;
+
 -- Retrieve vaccination data and calculate global vaccination percentage.
 SELECT
     v.location AS country,                  
@@ -197,6 +216,43 @@ WHERE
     AND v.date = '2023-08-16'               
 ORDER BY
     1, 2; 
+
+-- Retrieve data of people vaccinated from different income strata.
+SELECT DISTINCT ON (v.location)
+    v.location AS category,
+    MAX(v.date) AS max_vaccination_date,
+    d.population,
+    v.people_vaccinated,
+    ROUND(v.people_vaccinated::numeric / d.population * 100, 2) AS vaccination_percentage
+FROM
+    public.covid_vaccinations v
+JOIN
+    public.covid_deaths d ON v.location = d.location AND v.date = d.date
+WHERE
+    v.location ILIKE '%income%'
+GROUP BY
+    v.location, d.population, v.people_vaccinated
+ORDER BY
+    v.location, max_vaccination_date DESC;
+
+-- This query retrieves data for the "Low income" strata with its maximum date used.
+-- Addresses missing data for the "Low income" category in the last query.
+SELECT
+    v.location AS category,
+    MAX(v.date) AS max_date_used,
+    d.population,
+    v.people_vaccinated,
+    ROUND((v.people_vaccinated::numeric / d.population) * 100, 2) AS vaccination_percentage
+FROM
+    public.covid_vaccinations v
+JOIN
+    public.covid_deaths d ON v.location = d.location AND v.date = d.date
+WHERE
+    v.location = 'Low income'
+GROUP BY
+    v.location, d.population, v.people_vaccinated
+ORDER BY
+    max_date_used DESC;
 
 -- Calculate the death percentage of the population based on COVID-19 data.
 SELECT
@@ -235,40 +291,3 @@ GROUP BY
     location
 ORDER BY
     max_total_deaths DESC;
-
--- Retrieve data of people vaccinated from different income strata.
-SELECT DISTINCT ON (v.location)
-    v.location AS category,
-    MAX(v.date) AS max_vaccination_date,
-    d.population,
-    v.people_vaccinated,
-    ROUND(v.people_vaccinated::numeric / d.population * 100, 2) AS vaccination_percentage
-FROM
-    public.covid_vaccinations v
-JOIN
-    public.covid_deaths d ON v.location = d.location AND v.date = d.date
-WHERE
-    v.location ILIKE '%income%'
-GROUP BY
-    v.location, d.population, v.people_vaccinated
-ORDER BY
-    v.location, max_vaccination_date DESC;
-
--- This query retrieves data for the "Low income" strata with its maximum date used.
--- Addresses missing data for the "Low income" category in the last query.
-SELECT
-    v.location AS category,
-    MAX(v.date) AS max_date_used,
-    d.population,
-    v.people_vaccinated,
-    ROUND((v.people_vaccinated::numeric / d.population) * 100, 2) AS vaccination_percentage
-FROM
-    public.covid_vaccinations v
-JOIN
-    public.covid_deaths d ON v.location = d.location AND v.date = d.date
-WHERE
-    v.location = 'Low income'
-GROUP BY
-    v.location, d.population, v.people_vaccinated
-ORDER BY
-    max_date_used DESC;
