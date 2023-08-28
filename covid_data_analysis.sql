@@ -179,6 +179,25 @@ WHERE
 ORDER BY
     total_cases, total_deaths;
 
+-- Retrieve vaccination data and calculate global vaccination percentage.
+SELECT
+    v.location AS country,                  
+    v.date,                                 
+    d.population,                           
+    v.people_vaccinated,                    
+    ROUND((v.people_vaccinated::numeric / d.population) * 100, 2) AS vaccination_percentage                                           
+FROM
+    public.covid_vaccinations v             
+JOIN
+    public.covid_deaths d                   
+    ON v.location = d.location              
+    AND v.date = d.date
+WHERE
+    v.location = 'World'              
+    AND v.date = '2023-08-16'               
+ORDER BY
+    1, 2; 
+
 -- Calculate the death percentage of the population based on COVID-19 data.
 SELECT
     location,
