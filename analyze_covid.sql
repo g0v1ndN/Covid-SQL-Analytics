@@ -1,4 +1,7 @@
--- SQL script for database setup, data analysis, and visualization of COVID-19 data.
+/* 
+SQL script for database setup, data analysis, and visualization of COVID-19 data.
+Showcases SQL skills in database management, data import, aggregation, table joins, calculation, subqueries, filtering, result ordering, and data analysis.
+*/
 
 
 -- Initial Setup Queries:
@@ -51,6 +54,8 @@ SELECT
     (SELECT MIN(date) FROM public.covid_vaccinations) AS covid_vaccinations_start_date,
     (SELECT MAX(date) FROM public.covid_vaccinations) AS covid_vaccinations_end_date;
 
+-- End of Initial Setup Queries.
+
 
 -- Data Analysis Queries for India:
 
@@ -80,6 +85,19 @@ WHERE
     AND date = '2023-08-16'
 ORDER BY
     1, 2;
+
+-- Calculates monthly new cases in India, sorted by highest counts.
+SELECT
+    DATE_TRUNC('month', date) AS month,
+    SUM(new_cases) AS total_new_cases
+FROM
+    public.covid_deaths
+WHERE
+    location = 'India'
+GROUP BY
+    month
+ORDER BY
+    total_new_cases DESC;
 
 -- Calculates and format the mortality rate for Covid-related data in India.
 SELECT
@@ -121,7 +139,7 @@ SELECT
     v.date,
     d.population,
     v.people_fully_vaccinated,
-ROUND((v.people_fully_vaccinated::numeric / d.population) * 100, 2) AS fully_vaccination_percentage
+    ROUND((v.people_fully_vaccinated::numeric / d.population) * 100, 2) AS fully_vaccination_percentage
 FROM
     public.covid_vaccinations v
 JOIN
@@ -141,6 +159,8 @@ FROM
 WHERE
     location = 'India'
     AND new_cases > 0;
+
+-- End of Data Analysis Queries for India.
 
 
 -- Global COVID-19 Data Analysis Queries:
@@ -198,6 +218,19 @@ GROUP BY
 ORDER BY
     percent_population_infected DESC NULLS LAST;
 
+-- Calculates monthly new cases globally, sorted by highest counts.
+SELECT
+    DATE_TRUNC('month', date) AS month,
+    SUM(new_cases) AS total_new_cases
+FROM
+    public.covid_deaths
+WHERE
+    location = 'World'
+GROUP BY
+    month
+ORDER BY
+    total_new_cases DESC;
+
 -- Retrieve vaccination data and calculate global vaccination percentage.
 SELECT
     v.location AS country,                  
@@ -216,6 +249,26 @@ WHERE
     AND v.date = '2023-08-16'               
 ORDER BY
     1, 2; 
+
+-- Retrieves the latest COVID-19 vaccination percentages for countries based on population.
+SELECT
+    v.location AS country,
+    MAX(v.date) AS date,
+    d.population,
+    MAX(v.people_vaccinated) AS people_vaccinated,
+    ROUND((MAX(v.people_vaccinated)::numeric / d.population) * 100, 2) AS vaccination_percentage
+FROM
+    public.covid_vaccinations v
+JOIN
+    public.covid_deaths d ON v.location = d.location AND v.date = d.date
+WHERE
+    v.continent IS NOT NULL
+    AND v.date <= '2023-08-16'
+    AND v.people_vaccinated IS NOT NULL
+GROUP BY
+    v.location, d.population
+ORDER BY
+    vaccination_percentage DESC;
 
 -- Retrieve data of people vaccinated from different income strata.
 SELECT DISTINCT ON (v.location)
@@ -291,3 +344,5 @@ GROUP BY
     location
 ORDER BY
     max_total_deaths DESC;
+
+-- End of Global COVID-19 Data Analysis Queries.
