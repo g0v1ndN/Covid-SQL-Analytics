@@ -22,6 +22,7 @@ Embarking on my first data science project, this repository documents my progres
 ### Understanding the COVID-19 Situation in India
 - COVID-19 was first reported in India on <b>January 30, 2020</b>.
 - As of the latest data, the infection percentage in India is <b>3.18%</b>, indicating a relatively <b>moderate spread</b> of COVID-19 within the population.
+- The peak of new COVID-19 cases was recorded on <b>May 2021</b>, with a notable count of <b>9,284,558</b> new cases.
 - Currently, the mortality rate in India stands at <b>1.18%</b>, indicating a comparatively low fatality rate among confirmed cases.
 - <b>72.50%</b> of the population in India has received at least one dose of the Covid-19 vaccine, and <b>67.17%</b> are fully vaccinated.
 - India has reported a significant number of COVID-19 deaths, totaling <b>531,922</b>, which corresponds to <b>0.04%</b> of its population.
@@ -33,10 +34,14 @@ Embarking on my first data science project, this repository documents my progres
 - The latest data reveals a COVID-19 infection rate of approximately <b>9.65%</b>.
 - It also discloses a mortality rate of <b>0.90%</b>, reflecting a relatively low fatality rate among confirmed cases.
 
-#### Infection and Vaccination Statistics:  
+#### Infection Statistics:  
 - As of the current data, the <b>top 5 hotspots</b> with the highest infection percentages are Cyprus (73.76%), San Marino (72.37%), Brunei (69.09%), Austria (68.03%), and South Korea (65.42%).
 - In contrast, North Korea and Turkmenistan have <b>zero cases</b>, while Yemen, Niger, and Chad share the lowest infection rate of <b>0.04%</b>.
+- The highest number of new COVID-19 cases globally occurred on <b>January 2022</b>, with a total of <b>91,806,015</b> new cases reported.
+
+#### Vaccination Statistics:
 - Notably, vaccinations have been administered to more than <b>5.6 billion people</b>, accounting for <b>70.48%</b> of the population.
+- Gibraltar, Tokelau, United Arab Emirates, Qatar, Nauru, Brunei, and Pitcairn have successfully attained vaccination percentages exceeding <b>99%</b>.
 - Vaccination rates vary across <b>income categories</b>, with 32.54% of low-income, 79.86% of high-income, 66.28% of lower-middle-income, and 83.42% of upper-middle-income individuals having been vaccinated at least once.
 
 #### Regional Deaths and COVID-19 Toll:
