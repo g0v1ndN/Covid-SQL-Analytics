@@ -29,7 +29,7 @@ Embarking on my first data science project, this repository documents my progres
 ### Global COVID-19 Landscape
 
 #### COVID-19 Outbreak and Global Data:
-- The COVID-19 outbreak, which first started in <b>China</b>, was officially reported on <b>January 4, 2020</b>.
+- The COVID-19 outbreak, which originated in <b>China</b>, was officially reported on <b>January 4, 2020</b>.
 - The latest data reveals a COVID-19 infection rate of approximately <b>9.65%</b>.
 - It also discloses a mortality rate of <b>0.90%</b>, reflecting a relatively low fatality rate among confirmed cases.
 
