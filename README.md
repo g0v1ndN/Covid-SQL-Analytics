@@ -45,11 +45,11 @@ Embarking on my first data science project, this repository documents my progres
 - Vaccination rates vary across <b>income categories</b>, with 32.54% of low-income, 79.86% of high-income, 66.28% of lower-middle-income, and 83.42% of upper-middle-income individuals having been vaccinated at least once.
 
 #### Regional Deaths and COVID-19 Toll:
-- Peru, Bulgaria, Bosnia and Herzegovina, Hungary, and North Macedonia are exhibiting higher death percentages, with rates ranging from <b>0.47% to 0.65%</b>.
+- Peru, Bulgaria, Bosnia and Herzegovina, Hungary, and North Macedonia exhibit higher death percentages, with rates ranging from <b>0.47% to 0.65%</b>.
 - North America leads with the highest death count (1,127,152), followed by South America (704,659), Asia (531,922), Europe (399,938), Africa (102,595) and Oceania (22,618) on a <b>continental basis</b>.
 - The <b>countries</b> with the highest COVID-19 death toll are as follows: United States (1,127,152 deaths), Brazil (704,659 deaths), India (531,922 deaths), Russia (399,938 deaths), and Mexico (334,336 deaths).
 
-<b>Note:</b> The data used in this project covers the period from January 1, 2020, to August 16, 2023. Please note that the source website's data might have been updated since the start of this project.
+<b>Note:</b> The data used in this project covers the period from January 1, 2020 to August 16, 2023. Please note that the source website's data might have been updated since the start of this project.
 
 ## External Resources:
 
