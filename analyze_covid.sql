@@ -6,6 +6,9 @@ Showcases SQL skills in database management, data import, aggregation, table joi
 
 -- Initial Setup Queries:
 
+-- Create a database to store and analyze COVID-19 related data.
+CREATE DATABASE analyze_covid;
+
 -- Create a table to store COVID-19 deaths data.
 CREATE TABLE IF NOT EXISTS public.covid_deaths
 (
@@ -29,7 +32,7 @@ CREATE TABLE IF NOT EXISTS public.covid_deaths
 );
 
 -- Import COVID-19 deaths data from a CSV file into the "covid_deaths" table.
-COPY public.covid_deaths FROM 'C:\Users\Govind\Documents\CovidData\CovidDeaths.csv' DELIMITER ',' CSV HEADER;
+COPY public.covid_deaths FROM '/path/to/CovidDeaths.csv' DELIMITER ',' CSV HEADER;
 
 -- Create a table to store COVID-19 vaccination data.
 CREATE TABLE IF NOT EXISTS public.covid_vaccinations (
@@ -45,7 +48,7 @@ CREATE TABLE IF NOT EXISTS public.covid_vaccinations (
 );
 
 -- Import COVID-19 vaccination data from a CSV file into the "covid_vaccinations" table.
-COPY public.covid_vaccinations FROM 'C:\Users\Govind\Documents\CovidData\CovidVaccinations.csv' DELIMITER ',' CSV HEADER;
+COPY public.covid_vaccinations FROM '/path/to/CovidDeaths.csv' DELIMITER ',' CSV HEADER;
 
 -- Retrieve and compare the starting and ending dates of COVID-19 data from both tables to ensure data consistency.
 SELECT
