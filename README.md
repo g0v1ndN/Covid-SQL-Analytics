@@ -14,6 +14,31 @@
 ## About
 Embarking on my first data science project, this repository documents my progression as I explore SQL-based data analysis using PostgreSQL, with a specific focus on understanding the complexities of Covid-19 data. It hosts my <a href="https://github.com/g0v1ndN/Covid-SQL-Analytics/blob/main/analyze_covid.sql">code</a>, <a href="https://github.com/g0v1ndN/Covid-SQL-Analytics/tree/main/covid_data">curated data</a>, and <a href="https://github.com/g0v1ndN/Covid-SQL-Analytics#observations--findings">observations</a> drawn from detailed query analysis. While I'm on a mission to learn, I'm excited to share this journey openly, creating a resource for anyone eager to learn alongside me.
 
+## Prerequisites:
+- <b>SQL and PostgreSQL Knowledge:</b> A fundamental understanding of SQL concepts and experience with PostgreSQL will be beneficial as you navigate through the queries and analysis presented here.
+- <b>Development Environment:</b> Set up a development environment with PostgreSQL installed. You can download PostgreSQL from its <a href="https://www.postgresql.org/">official website</a> and follow the installation instructions provided.
+- <b>Basic Data Analysis Skills:</b> Familiarity with data analysis concepts will help you better understand the insights derived from the queries and observations shared in this repository.
+
+## Usage Instructions:
+
+### Downloading or Cloning the Repository:
+1. Click on the "Code" button on the top right corner of this repository page.
+2. Click on "Download ZIP" to download a compressed zip file of the repository.
+3. Extract the contents of the zip file to a folder on your computer.
+
+<p align="center"><b> OR </b></p>
+
+1. Open your terminal or command prompt and navigate to the directory where you want to clone the repository.
+2. Run the command `git clone https://github.com/g0v1ndN/Covid-SQL-Analytics` to clone the repository to your local machine.
+<p><b>Note:</b> You need to have Git installed on your computer. If you don't have it installed, please download and install Git from the official website (https://git-scm.com).</p>
+
+### Exploring the Code: 
+If you want to dive deep into the what this repository brings to the table, familiarize yourself with the main analysis code located in the analyze_covid.sql file. This code is split into three key parts:
+
+1. Initial Setup Queries: These queries establish the foundation by creating the necessary database, tables, and importing the Covid-19 data.
+2. Data Analysis Queries for India: This section contains SQL queries tailored to analyzing Covid-19 data specific to India. 
+3. Global COVID-19 Data Analysis Queries: This segment comprises SQL queries aimed at dissecting and analyzing the global COVID-19 data landscape. It provides insight to cross-country comparisons and trends in the pandemic's data.
+
 ## Observations & Findings
 
 ### Understanding the COVID-19 Situation in India
