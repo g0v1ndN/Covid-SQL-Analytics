@@ -3,9 +3,6 @@
    <a href="https://opensource.org/osd">
       <img src="https://img.shields.io/badge/Open%20Source-%2328a745" alt="open-source"/>
    </a>
-   <a href="http://makeapullrequest.com">
-      <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs Welcome"/>
-   </a>
    <a href="https://opensource.org/license/mit/">
       <img src="https://img.shields.io/badge/License-MIT-green" alt="mit-license"/>
    </a>
