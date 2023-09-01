@@ -14,12 +14,12 @@
 ## About
 Embarking on my first data science project, this repository documents my progression as I explore SQL-based data analysis using PostgreSQL, with a specific focus on understanding the complexities of Covid-19 data. It hosts my <a href="https://github.com/g0v1ndN/Covid-SQL-Analytics/blob/main/analyze_covid.sql">code</a>, <a href="https://github.com/g0v1ndN/Covid-SQL-Analytics/tree/main/covid_data">curated data</a>, and <a href="https://github.com/g0v1ndN/Covid-SQL-Analytics#observations--findings">observations</a> drawn from detailed query analysis. While I'm on a mission to learn, I'm excited to share this journey openly, creating a resource for anyone eager to learn alongside me.
 
-## Prerequisites:
-- <b>SQL and PostgreSQL Knowledge:</b> A fundamental understanding of SQL concepts and experience with PostgreSQL will be beneficial as you navigate through the queries and analysis presented here.
-- <b>Development Environment:</b> Set up a development environment with PostgreSQL installed. You can download PostgreSQL from its <a href="https://www.postgresql.org/">official website</a> and follow the installation instructions provided.
-- <b>Basic Data Analysis Skills:</b> Familiarity with data analysis concepts will help you better understand the insights derived from the queries and observations shared in this repository.
-
 ## Usage Instructions:
+
+### Prerequisites:
+- SQL and PostgreSQL Knowledge: A fundamental understanding of SQL concepts and experience with PostgreSQL will be beneficial as you navigate through the queries and analysis presented here.
+- Development Environment: Set up a development environment with PostgreSQL installed. You can download PostgreSQL from its <a href="https://www.postgresql.org/">official website</a> and follow the installation instructions provided.
+- Basic Data Analysis Skills: Familiarity with data analysis concepts will help you better understand the insights derived from the queries and observations shared in this repository.
 
 ### Downloading or Cloning the Repository:
 1. Click on the "Code" button on the top right corner of this repository page.
