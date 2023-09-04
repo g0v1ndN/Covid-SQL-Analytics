@@ -11,7 +11,7 @@
   </a>
    </div>
 
-## About
+## About:
 Embarking on my first data science project, this repository documents my progression as I explore SQL-based data analysis using PostgreSQL, with a specific focus on understanding the complexities of Covid-19 data. It hosts my <a href="https://github.com/g0v1ndN/Covid-SQL-Analytics/blob/main/analyze_covid.sql">code</a>, <a href="https://github.com/g0v1ndN/Covid-SQL-Analytics/tree/main/covid_data">curated data</a>, and <a href="https://github.com/g0v1ndN/Covid-SQL-Analytics#observations--findings">observations</a> drawn from detailed query analysis. While I'm on a mission to learn, I'm excited to share this journey openly, creating a resource for anyone eager to learn alongside me.
 
 ## Usage Instructions:
@@ -39,7 +39,7 @@ If you want to dive deep into the what this repository brings to the table, fami
 2. Data Analysis Queries for India: This section contains SQL queries tailored to analyzing Covid-19 data specific to India. 
 3. Global COVID-19 Data Analysis Queries: This segment comprises SQL queries aimed at dissecting and analyzing the global COVID-19 data landscape. It provides insight to cross-country comparisons and trends in the pandemic's data.
 
-## Observations & Findings
+## Observations & Findings:
 
 ### Understanding the COVID-19 Situation in India
 - COVID-19 was first reported in India on <b>January 30, 2020</b>.
