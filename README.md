@@ -6,8 +6,8 @@
    <a href="https://opensource.org/license/mit/">
       <img src="https://img.shields.io/badge/License-MIT-green" alt="mit-license"/>
    </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Glossary/SQL">
-    <img src="https://img.shields.io/badge/SQL-%23007ACC" alt="SQL"/>
+  <a href="https://www.postgresql.org/">
+    <img src="https://img.shields.io/badge/PostgreSQL-%23007ACC?logo=postgresql&logoColor=white" alt="PostgreSQL"/>
   </a>
    </div>
 
