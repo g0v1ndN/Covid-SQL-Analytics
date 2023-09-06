@@ -61,15 +61,15 @@ CREATE TABLE IF NOT EXISTS public.covid_vaccinations (
 -- Import COVID-19 vaccination data from a CSV file into the "covid_vaccinations" table.
 COPY public.covid_vaccinations FROM vaccinations_file_path DELIMITER ',' CSV HEADER;
 
--- Create an index on the 'location' column of the 'public.covid_deaths' table.
-CREATE INDEX IF NOT EXISTS location_idx ON public.covid_deaths (location);
-
 -- Retrieve and compare the starting and ending dates of COVID-19 data from both tables to ensure data consistency.
 SELECT
     (SELECT MIN(date) FROM public.covid_deaths) AS covid_deaths_start_date,
     (SELECT MAX(date) FROM public.covid_deaths) AS covid_deaths_end_date,
     (SELECT MIN(date) FROM public.covid_vaccinations) AS covid_vaccinations_start_date,
     (SELECT MAX(date) FROM public.covid_vaccinations) AS covid_vaccinations_end_date;
+
+-- Create an index on the 'location' column of the 'public.covid_deaths' table.
+CREATE INDEX IF NOT EXISTS location_idx ON public.covid_deaths (location);
 
 -- End of Initial Setup Queries.
 
@@ -99,9 +99,9 @@ FROM
     public.covid_deaths
 WHERE
     location = 'India'
-    AND date = '2023-08-16'
+    AND date = '2023-08-16' -- This date was chosen because it reflects the dataset's last update.
 ORDER BY
-    1, 2;
+    location, date;
 
 -- Calculates monthly new cases in India, sorted by highest counts.
 SELECT
@@ -127,9 +127,9 @@ FROM
     public.covid_deaths
 WHERE
     location = 'India'
-    AND date = '2023-08-16'
+    AND date = '2023-08-16' -- This date was chosen because it reflects the dataset's last update.
 ORDER BY
-    1, 2;
+    location, date;
 
 -- Calculate the vaccination percentage for India.
 SELECT
@@ -146,9 +146,9 @@ JOIN
     AND v.date = d.date
 WHERE
     v.location = 'India'              
-    AND v.date = '2023-08-16'               
+    AND v.date = '2023-08-16' -- This date was chosen because it reflects the dataset's last update.               
 ORDER BY
-    1, 2;                                   
+    country, date;                                   
 
 -- Retrieve the complete vaccination percentage for India.
 SELECT
@@ -163,9 +163,9 @@ JOIN
     public.covid_deaths d ON v.location = d.location AND v.date = d.date
 WHERE
     v.location = 'India'
-    AND v.date = '2023-08-16'
+    AND v.date = '2023-08-16' -- This date was chosen because it reflects the dataset's last update.
 ORDER BY
-    1, 2;
+    location, date;
 
 -- Calculate total deaths and death percentage for India.
 SELECT
@@ -206,7 +206,7 @@ FROM
     public.covid_deaths
 WHERE
     location = 'World'
-    AND date <= '2023-08-16'
+    AND date <= '2023-08-16' -- This date was chosen because it reflects the dataset's last update.
 GROUP BY
     population;
 
@@ -219,7 +219,7 @@ FROM
     public.covid_deaths
 WHERE
     continent IS NOT NULL
-    AND date <= '2023-08-16'
+    AND date <= '2023-08-16' -- This date was chosen because it reflects the dataset's last update.
 ORDER BY
     total_cases, total_deaths;
 
@@ -263,9 +263,9 @@ JOIN
     AND v.date = d.date
 WHERE
     v.location = 'World'              
-    AND v.date = '2023-08-16'               
+    AND v.date = '2023-08-16' -- This date was chosen because it reflects the dataset's last update.               
 ORDER BY
-    1, 2; 
+    country, date; 
 
 -- Retrieves the latest COVID-19 vaccination percentages for countries based on population.
 SELECT
@@ -280,7 +280,7 @@ JOIN
     public.covid_deaths d ON v.location = d.location AND v.date = d.date
 WHERE
     v.continent IS NOT NULL
-    AND v.date <= '2023-08-16'
+    AND v.date <= '2023-08-16' -- This date was chosen because it reflects the dataset's last update.
     AND v.people_vaccinated IS NOT NULL
 GROUP BY
     v.location, d.population
