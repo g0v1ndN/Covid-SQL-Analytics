@@ -189,7 +189,7 @@ SELECT
 FROM
     public.covid_deaths
 WHERE
-    continent IS NOT NULL
+    continent IS NOT NULL -- Filter out invalid rows like "World".
     AND total_cases > 0
 GROUP BY
     location
@@ -218,7 +218,7 @@ SELECT
 FROM
     public.covid_deaths
 WHERE
-    continent IS NOT NULL
+    continent IS NOT NULL -- Filter out invalid rows like "World".
     AND date <= '2023-08-16' -- This date was chosen because it reflects the dataset's last update.
 ORDER BY
     total_cases, total_deaths;
@@ -279,7 +279,7 @@ FROM
 JOIN
     public.covid_deaths d ON v.location = d.location AND v.date = d.date
 WHERE
-    v.continent IS NOT NULL
+    v.continent IS NOT NULL -- Filter out invalid rows like "World".
     AND v.date <= '2023-08-16' -- This date was chosen because it reflects the dataset's last update.
     AND v.people_vaccinated IS NOT NULL
 GROUP BY
@@ -343,7 +343,7 @@ SELECT
 FROM
     public.covid_deaths
 WHERE
-    continent IS NOT NULL
+    continent IS NOT NULL -- Filter out invalid rows like "World".
 GROUP BY
     continent
 ORDER BY
@@ -356,7 +356,7 @@ SELECT
 FROM
     public.covid_deaths
 WHERE
-    continent IS NOT NULL
+    continent IS NOT NULL -- Filter out invalid rows like "World".
 GROUP BY
     location
 ORDER BY
