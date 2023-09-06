@@ -61,6 +61,9 @@ CREATE TABLE IF NOT EXISTS public.covid_vaccinations (
 -- Import COVID-19 vaccination data from a CSV file into the "covid_vaccinations" table.
 COPY public.covid_vaccinations FROM vaccinations_file_path DELIMITER ',' CSV HEADER;
 
+-- Create an index on the 'location' column of the 'public.covid_deaths' table.
+CREATE INDEX IF NOT EXISTS location_idx ON public.covid_deaths (location);
+
 -- Retrieve and compare the starting and ending dates of COVID-19 data from both tables to ensure data consistency.
 SELECT
     (SELECT MIN(date) FROM public.covid_deaths) AS covid_deaths_start_date,
