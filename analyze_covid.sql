@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS public.covid_vaccinations (
 );
 
 -- Import COVID-19 vaccination data from a CSV file into the "covid_vaccinations" table.
-COPY public.covid_vaccinations FROM '/path/to/CovidDeaths.csv' DELIMITER ',' CSV HEADER;
+COPY public.covid_vaccinations FROM '/path/to/CovidVaccinations.csv' DELIMITER ',' CSV HEADER;
 
 -- Retrieve and compare the starting and ending dates of COVID-19 data from both tables to ensure data consistency.
 SELECT
