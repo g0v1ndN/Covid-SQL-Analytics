@@ -6,6 +6,17 @@ Showcases SQL skills in database management, data import, aggregation, table joi
 
 -- Initial Setup Queries:
 
+-- Create a PL/pgSQL function to declare and assign variables.
+DO $$
+DECLARE
+    deaths_file_path TEXT;
+    vaccinations_file_path TEXT;
+BEGIN
+    deaths_file_path := '/path/to/CovidDeaths.csv';
+    vaccinations_file_path := '/path/to/CovidVaccinations.csv';
+END;
+$$;
+
 -- Create a database to store and analyze COVID-19 related data.
 CREATE DATABASE analyze_covid;
 
@@ -32,7 +43,7 @@ CREATE TABLE IF NOT EXISTS public.covid_deaths
 );
 
 -- Import COVID-19 deaths data from a CSV file into the "covid_deaths" table.
-COPY public.covid_deaths FROM '/path/to/CovidDeaths.csv' DELIMITER ',' CSV HEADER;
+COPY public.covid_deaths FROM deaths_file_path DELIMITER ',' CSV HEADER;
 
 -- Create a table to store COVID-19 vaccination data.
 CREATE TABLE IF NOT EXISTS public.covid_vaccinations (
@@ -48,7 +59,7 @@ CREATE TABLE IF NOT EXISTS public.covid_vaccinations (
 );
 
 -- Import COVID-19 vaccination data from a CSV file into the "covid_vaccinations" table.
-COPY public.covid_vaccinations FROM '/path/to/CovidVaccinations.csv' DELIMITER ',' CSV HEADER;
+COPY public.covid_vaccinations FROM vaccinations_file_path DELIMITER ',' CSV HEADER;
 
 -- Retrieve and compare the starting and ending dates of COVID-19 data from both tables to ensure data consistency.
 SELECT
