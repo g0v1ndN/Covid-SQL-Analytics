@@ -30,7 +30,8 @@ Embarking on my first data science project, this repository documents my progres
 
 1. Open your terminal or command prompt and navigate to the directory where you want to clone the repository.
 2. Run the command `git clone https://github.com/g0v1ndN/Covid-SQL-Analytics` to clone the repository to your local machine.
-<p><b>Note:</b> You need to have Git installed on your computer. If you don't have it installed, please download and install Git from the official website (https://git-scm.com).</p>
+> [!NOTE]
+> You need to have Git installed on your computer. If you don't have it installed, please download and install Git from the [official website](https://git-scm.com).
 
 ### Exploring the Code: 
 If you want to dive deep into the what this repository brings to the table, familiarize yourself with the main analysis code located in the analyze_covid.sql file. This code is split into three key parts:
