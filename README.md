@@ -85,4 +85,3 @@ The Creative Commons Attribution (CC-BY) License is an open-source license that 
 
 ## License: 
 This project is licensed under the terms & conditions (T&Cs) of the MIT license. If you're interested in reading more about it, please take a look at the <a href="https://github.com/g0v1ndN/Covid-SQL-Analytics/blob/main/LICENSE">LICENSE</a> document.
-
